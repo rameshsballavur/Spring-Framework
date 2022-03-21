@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xmlns:p="http://www.springframework.org/schema/p" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd 
+	   http://www.springframework.org/schema/context 
+	   http://www.springframework.org/schema/context/spring-context.xsd"> 
+	   
+	    <bean name = "student1" class = "com.jsp.multiplebeanclass.Student"
+	    p:id = "420" p:name = "Smith" p:marks = "90.0">
+		</bean>
+		
+		<bean name = "student2" class = "com.jsp.multiplebeanclass.Student"
+	    p:id = "421" p:name = "Allen" p:marks = "80.0">
+		</bean>
+		
+		<bean name = "student3" class = "com.jsp.multiplebeanclass.Student"
+	    p:id = "423" p:name = "John" p:marks = "100.0">
+		</bean>
+		
+		<bean name = "student4" class = "com.jsp.multiplebeanclass.Student"
+	    p:id = "1" p:name = "Smith" p:marks = "95.0">
+		</bean>
+		
+		<bean name = "branch1" class = "com.jsp.multiplebeanclass.Branch"
+	    p:branchId = "101" p:branchName = "ECE">
+	    
+	    <property name="students">
+	    <set>
+	    <ref bean = "student1"></ref>
+	    <ref bean = "student2"></ref>
+	    </set>
+	    </property>
+		</bean>
+		
+		<bean name = "branch2" class = "com.jsp.multiplebeanclass.Branch"
+	    p:branchId = "102" p:branchName = "CS">
+	    
+	    <property name="students">
+	    <set>
+	    <ref bean = "student3"></ref>
+	    <ref bean = "student4"/>
+	    </set>
+	    </property>
+		</bean>
+		
+		<bean name = "college" class = "com.jsp.multiplebeanclass.College"
+	    p:collegeId = "1" p:collegeName = "Basaveshwar Engineering College,Bagalkot">
+	    
+	    <property name="branches">
+	    <set>
+	    <ref bean = "branch1"></ref>
+	    <ref bean = "branch2"/>
+	    </set>
+	    </property>
+		</bean>
+		
+		
+	  
+	   </beans>
